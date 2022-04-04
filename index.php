@@ -17,37 +17,39 @@
 
 
 
-$height = 90;
+$height = 91;
 
-var_dump($height);
+//!= 〜ではなかったら
 
-if ($height === 91){//条件は数字
-  echo '身長は'.$height.'cmです';
-}else {
-  echo '身長は'.$height.'cmではありません';
+if ($height !== 90){//型が同じかどうか
+  echo '身長は90cmではありません。';
+}
+//データが入っているかどうか
+//iseet empty is_null
+
+$test = '1';//文字
+
+if(!empty($test)){
+  echo'変数は空ではありません';
 }
 
-$signal = 'red';
+//AND(&&) と OR(||)
 
-if ($signal === 'red'){
-  echo'とまれ';
-}else if ($signal === 'yellow'){
-  echo'一旦停止';
-}else {
-  echo'進む';
+$signal_1 = 'red';
+$signal_2 = 'blue';
+
+if($signal_1 === 'red' || $signal_2 === 'blue'){
+  echo'赤です';
 }
 
+// 三項演算子
+//if else
+// 条件 ? 真 : 偽
 
-$speed = 80;
+$math = 80;
 
-if ($signal === 'blue'){
-  if($speed >= 90){
-    echo'スピード違反';//ネスト構文
-  }
-}
+// =がついていないと80は含まない点に注意
+$comment = $math > 80 ? 'good' : 'not good';
 
-
-//== 一致
-//=== 型も一致
-
+echo $comment;
 ?>
