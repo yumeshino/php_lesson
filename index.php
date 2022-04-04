@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<head>
-</head>
-<body>
 
-こちらはHTMLです。
-  
 <?php
+
+数字と文字
+数字は半角
+
+123
+１２３・・文字して認識
+'こんにちは'
 
 echo('こちらはHTMLです。');
 
 ?>
-</body>
