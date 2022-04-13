@@ -1,29 +1,37 @@
 
 <?php
 
-// for 繰り返す数が決まっていたら
-//  while 繰り返す数が決まっていなっかたら
+// switch
+// if文 の方がいい 見やすい
 
-// continue,break
-for($i = 0; $i < 10; $i++ ){
-  if($i === 5){
-    // break
-    // continue
-  }
-  echo $i;
+$date = 1;
+
+// == switch
+// === 型も等しい
+
+switch($date){
+  case $date === 1:
+    echo'1です';
+    break;
+  case 2:
+    echo'2です';
+    break;
+  case 3:
+    echo'3です';
+    break;
+    default:
+    echo '1-3ではありません';
 }
 
-
-echo '<br>';
-
-
-$j = 0;
-while($j < 5){
-  echo $j;
-  $j++;
+if($date === 1){
+  echo '1';
 }
 
+if($date === 2){
+  echo '2';
+}
 
-
-
+if($date === 3){
+  echo '3';
+}
 ?>
