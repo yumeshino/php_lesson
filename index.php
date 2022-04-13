@@ -1,55 +1,45 @@
 
 <?php
-//条件分岐
 
-//if(elseはできるだけ使わない)
-//foreach(配列の抽出)
+// foreach 複数の値を展開したり表示したりする
 
-//if (条件) {
-//条件が真なら実行
-// } 
+$members = [
+  'name' => '本田',
+  'height' => '170',
+  'hibby' => 'サッカー'
+];
 
-// if(条件) {
-//   条件が真なら実行
-// } else {
-//   条件が偽なら実行
-// }
-
-
-
-$height = 91;
-
-//!= 〜ではなかったら
-
-if ($height !== 90){//型が同じかどうか
-  echo '身長は90cmではありません。';
-}
-//データが入っているかどうか
-//iseet empty is_null
-
-$test = '1';//文字
-
-if(!empty($test)){
-  echo'変数は空ではありません';
+//バリューのみ表示
+//右側の変数は何でもいいが視認性の観点から元々の名前を複数形にして右側は単体形にするのがオーソドックス
+foreach($members as $member){
+  echo $member;
 }
 
-//AND(&&) と OR(||)
+echo'<br>';
 
-$signal_1 = 'red';
-$signal_2 = 'blue';
-
-if($signal_1 === 'red' || $signal_2 === 'blue'){
-  echo'赤です';
+//キーとバリューそれぞれ表示
+foreach($members as $key => $value){
+  echo $key. 'は'. $value. 'です';
 }
 
-// 三項演算子
-//if else
-// 条件 ? 真 : 偽
+echo'<br>';
 
-$math = 80;
 
-// =がついていないと80は含まない点に注意
-$comment = $math > 80 ? 'good' : 'not good';
 
-echo $comment;
+// 多段階の配列を展開
+$members_2 = [
+  '本田' => [
+    'height' => '170',
+    'hibby' => 'サッカー'
+  ],
+  '香川' => [
+    'height' => '165',
+    'hibby' => 'サッカー'
+  ]
+];
+
+foreach($members_2 as $member_1){
+  foreach($member_1 as $member => $value)
+  echo $member. 'は'. $value. 'です';
+}
 ?>
