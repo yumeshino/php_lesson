@@ -47,4 +47,7 @@ echo preg_match('/文字列/',$str_3);
 echo substr('あいう',2);
 
 echo mb_substr('かきくけこ',2);
+
+//関数の探し方
+// 例：php 文字列 取り出し方 したいことをそのまま検索する
 ?>
