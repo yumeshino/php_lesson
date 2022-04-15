@@ -4,6 +4,9 @@
 // 組み込み関数・・準備してある関数
 // ユーザー定義関数・・自由に作れる関数
 
+
+
+//ユーザー定義関数
 // function test(引数1,引数2) {
   // 処理
 
@@ -56,5 +59,32 @@ function sumPrice($int1, $int2){
 $total = sumPrice(3,5);
 
 echo $total;
+
+
+//組み込み関数inユーザー定義関数
+//関数名の付け方
+
+$postalCode = '123-4567';
+//camelCase
+function checkPostalCode($str){
+  $replaced = str_replace('-','',$str);
+  $length = strlen($replaced);
+
+  var_dump($length);
+
+  if($length === 7){
+    return true;
+  }
+  return false;
+}
+
+var_dump(checkPostalCode($postalCode));
+
+//snakeCase
+// check_postal_code()
+
+
+//できるだけ関数化＋ファイル分割
+
 ?>
 
