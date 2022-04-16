@@ -23,6 +23,5 @@ function checkScope2($str){
 checkScope2($globalVariable);
 
 echo $globalVariable;
-echo $localVariable
 
 ?>
