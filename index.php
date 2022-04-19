@@ -11,6 +11,9 @@ echo $commonVariable;
 //マジック定数
 //現在のファイルの絶対パスを表示してくれる
 echo __DIR__;
+//現在のファイルのありかまで表示してくれる
+echo __FILE__;
+
 
 commonTest();
 
