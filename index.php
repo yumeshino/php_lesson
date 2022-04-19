@@ -1,37 +1,17 @@
 
 <?php
 
-// switch
-// if文 の方がいい 見やすい
+//階層が同じ場合の書き方
+require 'common.php';
+//階層が違う場合の書き方
+// require '../common/common.php';
 
-$date = 1;
+echo $commonVariable;
 
-// == switch
-// === 型も等しい
+//マジック定数
+//現在のファイルの絶対パスを表示してくれる
+echo __DIR__;
 
-switch($date){
-  case $date === 1:
-    echo'1です';
-    break;
-  case 2:
-    echo'2です';
-    break;
-  case 3:
-    echo'3です';
-    break;
-    default:
-    echo '1-3ではありません';
-}
+commonTest();
 
-if($date === 1){
-  echo '1';
-}
-
-if($date === 2){
-  echo '2';
-}
-
-if($date === 3){
-  echo '3';
-}
 ?>
