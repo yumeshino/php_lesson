@@ -4,11 +4,21 @@
 //GET..アドレス通信にキーが表示される
 //POST..アドレス通信に何も表示されない 表示されてはまずいもの（パスワードなど）のときに使う
 
-if(!empty($_POST)){
-  echo '<pre>';
-  var_dump($_POST); 
-  echo '</pre>';
-}
+// if(!empty($_POST)){
+//   echo '<pre>';
+//   var_dump($_POST); 
+//   echo '</pre>';
+// }
+
+//フォームセキュリティ
+  // 代表的な攻撃と対策
+    // XXS（cross–site scripting）
+    // クリックジャッキング
+    // CRSF（cross–site request forgeries）
+    // SQLインジェクション->DB時
+    // etc...
+  // 対策：サニタイズ（消毒）、バリテージョン（検証）
+
 
 //入力、確認、完了 input.php,conform.php,thanks.php
 //input.php
