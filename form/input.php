@@ -1,14 +1,18 @@
 <?php
 
-if(!empty($_GET)){
+if(!empty($_POST)){
   echo '<pre>';
-  var_dump($_GET); 
+  var_dump($_POST); 
   echo '</pre>';
 }
 
 //スーパーグローバル変数 php 9種類
-//連想配列
+//連想配列になっている
+//GET..アドレス通信にキーが表示される
+//POST..アドレス通信に何も表示されない 表示されてはまずいもの（パスワードなど）のときに使う
 ?>
+
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -17,7 +21,7 @@ if(!empty($_GET)){
   <title>input</title>
 </head>
 <body>
-  <form method="GET" action="input.php">
+  <form method="POST" action="input.php">
     氏名
     <input type="text" name="yuor_name">
     <br>
