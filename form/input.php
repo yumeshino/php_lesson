@@ -20,6 +20,15 @@
   // 対策：サニタイズ（消毒）、バリテージョン（検証）
 
 
+//サニタイズのための専用コード
+function h($str)
+{
+  return htmlspecialchars($str,ENT_QUOTES,UTF-8);
+}
+
+
+
+
 //入力、確認、完了 input.php,conform.php,thanks.php
 //input.php
 
@@ -48,15 +57,15 @@ if(!empty($_POST['btn_submit'])){
 <?php if($pageFlag === 1) : ?>
   <form method="POST" action="input.php">
     氏名
-    <?php echo $_POST['your_name'];?>
+    <?php echo h($_POST['your_name']);?>
     <br>
     メールアドレス
-    <?php echo $_POST['email'];?>
+    <?php echo h($_POST['email']);?>
     <br>
     <input type="submit" name="back" value="戻る">
     <input type="submit" name="btn_submit" value="送信する">
-    <input type="hidden" name="your_name" value=" <?php echo $_POST['your_name'];?>">
-    <input type="hidden" name="email" value=" <?php echo $_POST['email'];?>">
+    <input type="hidden" name="your_name" value=" <?php echo h($_POST['your_name']);?>">
+    <input type="hidden" name="email" value=" <?php echo h($_POST['email']);?>">
   </form>
 <?php endif; ?>
 
@@ -69,10 +78,10 @@ if(!empty($_POST['btn_submit'])){
 <?php if($pageFlag === 0) : ?>
   <form method="POST" action="input.php">
     氏名
-    <input type="text" name="your_name" value="<?php if(!empty( $_POST['your_name'])){echo $_POST['your_name'];}?>">
+    <input type="text" name="your_name" value="<?php if(!empty( $_POST['your_name'])){echo h($_POST['your_name']);}?>">
     <br>
     メールアドレス
-    <input type="email" name="email" value="<?php if(!empty( $_POST['email'])){echo $_POST['email'];}?>">
+    <input type="email" name="email" value="<?php if(!empty( $_POST['email'])){echo h($_POST['email']);}?>">
     <br>
     <input type="submit" name="btn_confirm" value="確認する" >
   </form>
