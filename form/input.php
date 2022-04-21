@@ -1,5 +1,8 @@
 <?php
 
+
+session_start();
+
 //クリックジャッキングの対策の為のコード
 header('X-FRAME-OPTIONS:DENY');
 //スーパーグローバル変数 php 9種類
@@ -7,11 +10,11 @@ header('X-FRAME-OPTIONS:DENY');
 //GET..アドレス通信にキーが表示される
 //POST..アドレス通信に何も表示されない 表示されてはまずいもの（パスワードなど）のときに使う
 
-// if(!empty($_POST)){
-//   echo '<pre>';
-//   var_dump($_POST); 
-//   echo '</pre>';
-// }
+if(!empty($_SESSION)){
+  echo '<pre>';
+  var_dump($_SESSION); 
+  echo '</pre>';
+}
 
 //フォームセキュリティ
   // 代表的な攻撃と対策
@@ -22,17 +25,26 @@ header('X-FRAME-OPTIONS:DENY');
     // etc...
   // 対策：サニタイズ（消毒）、バリテージョン（検証）
 
+  // CSER対策
+  // $_GET
+  // $_POST・・一回きり
+
+  // $_SESSION・・残る
+  // →$_SESSIONを使ったトークンを発行
+
+
 
 //サニタイズのための専用コード
 function h($str)
 {
-  return htmlspecialchars($str,ENT_QUOTES,UTF-8);
+  return htmlspecialchars($str,ENT_QUOTES,'UTF-8');
 }
 
 
 
 
 //入力、確認、完了 input.php,conform.php,thanks.php
+// CSER 偽物のinput.php->悪意のあるページ
 //input.php
 
 $pageFlag = 0;
@@ -58,6 +70,7 @@ if(!empty($_POST['btn_submit'])){
 <body>
 
 <?php if($pageFlag === 1) : ?>
+  <?php if($_POST['csrf'] === $_SESSION['csrfToken']):?>
   <form method="POST" action="input.php">
     氏名
     <?php echo h($_POST['your_name']);?>
@@ -69,16 +82,31 @@ if(!empty($_POST['btn_submit'])){
     <input type="submit" name="btn_submit" value="送信する">
     <input type="hidden" name="your_name" value=" <?php echo h($_POST['your_name']);?>">
     <input type="hidden" name="email" value=" <?php echo h($_POST['email']);?>">
+    <input type="hidden" name="csrf" value=" <?php echo h($_POST['csrf']);?>">
   </form>
+<?php endif; ?>
+
 <?php endif; ?>
 
 
 <?php if($pageFlag === 2) : ?>
+<?php if($_POST['csrf'] === $_SESSION['csrfToken']):?>
   送信が完了しました。
+
+<?php unset($_SESSION['csrftokne']); ?>
+<?php endif; ?>
 <?php endif; ?>
 
 
 <?php if($pageFlag === 0) : ?>
+<!-- 暗号的に安全な、擬似ランダムなバイト列を生成するコード -->
+  <?php
+  if(!isset($_SESSION['csrfToken'])){
+    $csrfToken = bin2hex(random_bytes(32));
+    $_SESSION['csrfToken'] = $csrfToken;
+  }
+  $token = $_SESSION['csrfToken'] = $csrfToken;
+  ?>
   <form method="POST" action="input.php">
     氏名
     <input type="text" name="your_name" value="<?php if(!empty( $_POST['your_name'])){echo h($_POST['your_name']);}?>">
@@ -87,6 +115,7 @@ if(!empty($_POST['btn_submit'])){
     <input type="email" name="email" value="<?php if(!empty( $_POST['email'])){echo h($_POST['email']);}?>">
     <br>
     <input type="submit" name="btn_confirm" value="確認する" >
+    <input type="hidden" name="csrf" value="<?php echo $token; ?>">
   </form>
   <?php endif; ?>
 
