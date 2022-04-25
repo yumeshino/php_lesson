@@ -10,9 +10,9 @@ header('X-FRAME-OPTIONS:DENY');
 //GET..アドレス通信にキーが表示される
 //POST..アドレス通信に何も表示されない 表示されてはまずいもの（パスワードなど）のときに使う
 
-if(!empty($_SESSION)){
+if(!empty($_POST)){
   echo '<pre>';
-  var_dump($_SESSION); 
+  var_dump($_POST); 
   echo '</pre>';
 }
 
@@ -25,13 +25,21 @@ if(!empty($_SESSION)){
     // etc...
   // 対策：サニタイズ（消毒）、バリテージョン（検証）
 
+
   // CSER対策
   // $_GET
   // $_POST・・一回きり
 
   // $_SESSION・・残る
-  // →$_SESSIONを使ったトークンを発行
-
+  // →$_SESSIONを使ったトークンを発行両方で
+  //文字・・・・・・未入力、文字数
+  
+  //バリテージョン
+    //HTML5側とサーバー側両方で
+      // メールアドレス・・未入力、一つだけか
+      // 性別などの選択項目・・未入力
+      // 郵便番号・電話番号・カナ。etc
+  
 
 
 //サニタイズのための専用コード
@@ -114,6 +122,32 @@ if(!empty($_POST['btn_submit'])){
     メールアドレス
     <input type="email" name="email" value="<?php if(!empty( $_POST['email'])){echo h($_POST['email']);}?>">
     <br>
+    ホームページ
+    <input type="url" name="url" value="<?php if(!empty( $_POST['url'])){echo h($_POST['url']);}?>">
+    <br>
+    性別
+    <input type="radio" name="gender" value="0">男性
+    <input type="radio" name="gender" value="1">女性
+    <br>
+    年齢
+    <select name="age">
+      <option value="0">選択してください</option>
+      <option value="0">〜19歳</option>
+      <option value="0">20〜29歳</option>
+      <option value="0">30〜39歳</option>
+      <option value="0">40〜49歳</option>
+      <option value="0">50〜59歳</option>
+      <option value="0">60〜69歳</option>
+    </select>
+    <br>
+    お問い合わせ内容
+    <textarea name="cotact">
+      <?php if(!empty( $_POST['contact'])){echo h($_POST['contact']);}?>
+    </textarea>
+    <br>
+    <input type="checkbox" name="caution" value="1"> 注意事項にチェックする
+    <br>
+
     <input type="submit" name="btn_confirm" value="確認する" >
     <input type="hidden" name="csrf" value="<?php echo $token; ?>">
   </form>
