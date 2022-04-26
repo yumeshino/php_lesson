@@ -3,6 +3,8 @@
 
 session_start();
 
+require 'validation.php';
+
 //クリックジャッキングの対策の為のコード
 header('X-FRAME-OPTIONS:DENY');
 //スーパーグローバル変数 php 9種類
@@ -38,7 +40,7 @@ if(!empty($_POST)){
     //HTML5側とサーバー側両方で
       // メールアドレス・・未入力、一つだけか
       // 性別などの選択項目・・未入力
-      // 郵便番号・電話番号・カナ。etc
+      // 郵便番号・電話番号・カナ・etc
   
 
 
