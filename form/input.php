@@ -51,8 +51,6 @@ function h($str)
 }
 
 
-
-
 //入力、確認、完了 input.php,conform.php,thanks.php
 // CSER 偽物のinput.php->悪意のあるページ
 //input.php
