@@ -157,10 +157,10 @@ if(!empty($_POST['btn_submit'])){
     <input type="text" name="your_name" value="<?php if(!empty( $_POST['your_name'])){echo h($_POST['your_name']);}?>">
     <br>
     メールアドレス
-    <input type="email" name="email" value="<?php if(!empty( $_POST['email'])){echo h($_POST['email']);}?>">
+    <input type="text" name="email" value="<?php if(!empty( $_POST['email'])){echo h($_POST['email']);}?>">
     <br>
     ホームページ
-    <input type="url" name="url" value="<?php if(!empty( $_POST['url'])){echo h($_POST['url']);}?>">
+    <input type="text" name="url" value="<?php if(!empty( $_POST['url'])){echo h($_POST['url']);}?>">
     <br>
     性別
     <input type="radio" name="gender" value="0" 
