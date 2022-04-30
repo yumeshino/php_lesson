@@ -200,11 +200,13 @@ if(!empty($_POST['btn_submit'])){
           <option value="6">60〜69歳</option>
         </select>
         </div>
-    お問い合わせ内容
-    <textarea name="cotact">
-      <?php if(!empty( $_POST['contact'])){echo h($_POST['contact']) ;}?>
-    </textarea>
-    <br>
+
+        <div class="form-group">
+          <label for="cantact">お問い合わせ内容</label>
+          <textarea class="form-control" id="contact" row="3" name="cotact">
+          <?php if(!empty( $_POST['contact'])){echo h($_POST['contact']) ;}?>
+          </textarea>
+        </div>
     <input type="checkbox" name="caution" value="1"> 注意事項にチェックする
     <br>
 
