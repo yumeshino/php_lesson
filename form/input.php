@@ -187,18 +187,19 @@ if(!empty($_POST['btn_submit'])){
         {echo 'checked';}?>>
         <label class="form-check-label">女性</label>
     </div>
-    
-    年齢
-    <select name="age">
-      <option value="0">選択してください</option>
-      <option value="1" selected>〜19歳</option>
-      <option value="2">20〜29歳</option>
-      <option value="3">30〜39歳</option>
-      <option value="4">40〜49歳</option>
-      <option value="5">50〜59歳</option>
-      <option value="6">60〜69歳</option>
-    </select>
-    <br>
+
+      <div class="form-group">
+        <label for="age">年齢</label>
+        <select name="age">
+          <option value="0">選択してください</option>
+          <option value="1" selected>〜19歳</option>
+          <option value="2">20〜29歳</option>
+          <option value="3">30〜39歳</option>
+          <option value="4">40〜49歳</option>
+          <option value="5">50〜59歳</option>
+          <option value="6">60〜69歳</option>
+        </select>
+        </div>
     お問い合わせ内容
     <textarea name="cotact">
       <?php if(!empty( $_POST['contact'])){echo h($_POST['contact']) ;}?>
