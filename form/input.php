@@ -142,7 +142,7 @@ if(!empty($_POST['btn_submit'])){
     $csrfToken = bin2hex(random_bytes(32));
     $_SESSION['csrfToken'] = $csrfToken;
   }
-  $token = $_SESSION['csrfToken'] = $csrfToken;
+  $token = $_SESSION['csrfToken'];
 ?>
 
 <?php if(!empty($errors) && !empty($_POST['btn_confirm']) ) : ?>
@@ -152,15 +152,16 @@ if(!empty($_POST['btn_submit'])){
         echo '<li>' . $error . '</li>';
       }
     ?>
-  <?php echo '</ul> ;?>
+  <?php echo '</ul>';?>
 
-<?php endif; ?>
+<?php endif;?>
 
 
-  <form method="POST" action="input.php">
-    氏名
-    <input type="text" name="your_name" value="<?php if(!empty( $_POST['your_name'])){echo h($_POST['your_name']);}?>">
-    <br>
+<form method="POST" action="input.php">
+  <div class="form-group">
+  <label for="your_name">氏名</label>
+   <input type="text" class="form_control" id="your_name" value="<?php if(!empty( $_POST['your_name'])){echo h($_POST['your_name']);}?>" required> 
+  </div>
     メールアドレス
     <input type="text" name="email" value="<?php if(!empty( $_POST['email'])){echo h($_POST['email']);}?>">
     <br>
@@ -188,7 +189,7 @@ if(!empty($_POST['btn_submit'])){
     <br>
     お問い合わせ内容
     <textarea name="cotact">
-      <?php if(!empty( $_POST['contact'])){echo h($_POST['contact']);}?>
+      <?php if(!empty( $_POST['contact'])){echo h($_POST['contact']) ;}?>
     </textarea>
     <br>
     <input type="checkbox" name="caution" value="1"> 注意事項にチェックする
@@ -200,6 +201,7 @@ if(!empty($_POST['btn_submit'])){
 
   <?php endif; ?>
 
+
 <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -210,5 +212,6 @@ if(!empty($_POST['btn_submit'])){
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
+
   </body>
 </html>
