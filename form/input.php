@@ -207,8 +207,11 @@ if(!empty($_POST['btn_submit'])){
           <?php if(!empty( $_POST['contact'])){echo h($_POST['contact']) ;}?>
           </textarea>
         </div>
-    <input type="checkbox" name="caution" value="1"> 注意事項にチェックする
-    <br>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox"  id="caution" name="caution" value="1"> 
+          <label class="form-check-label" for="caution">注意事項にチェックする</label>
+        </div>
 
     <input type="submit" name="btn_confirm" value="確認する" >
     <input type="hidden" name="csrf" value="<?php echo $token; ?>">
