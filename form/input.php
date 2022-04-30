@@ -164,24 +164,30 @@ if(!empty($_POST['btn_submit'])){
         <label for="your_name">氏名</label>
         <input type="text" class="form_control" id="your_name" value="<?php if(!empty( $_POST['your_name'])){echo h($_POST['your_name']);}?>" required> 
       </div>
-      </div>
-    </div>
-  </div>
 
-    メールアドレス
-    <input type="text" name="email" value="<?php if(!empty( $_POST['email'])){echo h($_POST['email']);}?>">
-    <br>
-    ホームページ
-    <input type="text" name="url" value="<?php if(!empty( $_POST['url'])){echo h($_POST['url']);}?>">
-    <br>
+
+      <div class="form-group">
+        <label for="email">メールアドレス</label>
+        <input type="text" name="email" value="<?php if(!empty( $_POST['email'])){echo h($_POST['email']);}?>">
+      </div>
+
+      <div class="form-group">
+        <label for="url">ホームページ</label>
+        <input type="text" name="url" value="<?php if(!empty( $_POST['url'])){echo h($_POST['url']);}?>">
+      </div>
+
     性別
-    <input type="radio" name="gender" value="0" 
-    <?php if(isset( $_POST['gender']) && $_POST['gender'] === '0')
-    {echo 'checked';}?>>男性
-    <input type="radio" name="gender" value="1"
-    <?php if(isset( $_POST['gender']) && $_POST['gender'] === '1')
-    {echo 'checked';}?>>女性
-    <br>
+      <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" name="gender" id="gender1" value="0" 
+        <?php if(isset( $_POST['gender']) && $_POST['gender'] === '0')
+        {echo 'checked';}?>>
+        <label class="form-check-label">男性</label>
+        <input type="radio" class="form-check-input" name="gender" id="gender2" value="1"
+        <?php if(isset( $_POST['gender']) && $_POST['gender'] === '1')
+        {echo 'checked';}?>>
+        <label class="form-check-label">女性</label>
+    </div>
+    
     年齢
     <select name="age">
       <option value="0">選択してください</option>
