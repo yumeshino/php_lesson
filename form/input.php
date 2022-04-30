@@ -213,9 +213,14 @@ if(!empty($_POST['btn_submit'])){
           <label class="form-check-label" for="caution">注意事項にチェックする</label>
         </div>
 
-    <input type="submit" name="btn_confirm" value="確認する" >
-    <input type="hidden" name="csrf" value="<?php echo $token; ?>">
-  </form>
+        <input class="btn btn-info" type="submit" name="btn_confirm" value="確認する" >
+        <input type="hidden" name="csrf" value="<?php echo $token; ?>">
+        </form>
+
+
+        </div>
+      </div>
+    </div>
 
   <?php endif; ?>
 
