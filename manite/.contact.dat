@@ -1,0 +1,19 @@
+phpでデータを保存する方法
+・ファイル（テキストファイル）
+    ->手軽・データのやりとり
+
+・データベース（MySQL、MariaDB）
+    ->大量のデータを保管
+
+
+ファイルの操作
+・ファイル名型（ファイル丸ごと）
+    ->file_get_contents,file_put_contents
+・ストリーム型（一行ごと）
+    ->fopen,fclose,fgets.fwrite
+・オブジェクト型（オブジェクトとして）
+    ->SpFileObject    
+
+
+
+
