@@ -83,4 +83,5 @@ fclose($contents);
 // 4,閉じる fclose（ロック解除）
 
 
+
 ?>
