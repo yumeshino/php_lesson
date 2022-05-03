@@ -82,4 +82,5 @@ fclose($contents);
 // 3,読込/書込/追記 fgets/fwrite
 // 4,閉じる fclose（ロック解除）
 
+
 ?>
