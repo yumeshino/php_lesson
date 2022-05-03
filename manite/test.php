@@ -76,6 +76,10 @@ fwrite($contents,$addText);
 
 fclose($contents);
 
-
+//ファイル操作の流れ（ストリーム型）
+// 1,開く fopen(r,w,a)
+// 2,排他ロック flock
+// 3,読込/書込/追記 fgets/fwrite
+// 4,閉じる fclose（ロック解除）
 
 ?>
