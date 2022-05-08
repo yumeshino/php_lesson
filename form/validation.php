@@ -14,7 +14,7 @@ function validation($request){//$_POST連想配列
 
   if(!empty($request['url'])){
     if(!filter_var($request['url'],FILTER_VALIDATE_URL)){
-      $errors[] = '「ホームページ」は正しい形式で入力してください。';
+      $errors[] = '「ホームページ」は正しい形式で入力してください。'
     }
   }
 
