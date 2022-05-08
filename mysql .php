@@ -1,0 +1,3 @@
+phpからmysqlデータベースにアクセスするためのAPIはmysqlかPDO_musql
+
+
