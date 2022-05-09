@@ -16,6 +16,13 @@ Read・・・・表示 slect
 Update・・・更新 update（上書き） ->履歴を残すか、完全に上書きするか
 Delete・・・削除 delete ->完全に消すか、非表示にするか
 
+db操作の基本 Select
+Select 表示させたい項目
+From table名
+Whwre 検索条件
+->SELECT*FROM`contacts
+->SELECT`your_nama`,`email`FROM`contacts`WHERE`your_name` = あああ
+
 データ量が膨大になるなら
 パーティション（分割）、インデックス（牽引）
 レプリケーション（ミラーリング）も要検討
