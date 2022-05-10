@@ -29,4 +29,28 @@ echo '<pre>';
 var_dump($result);
 echo '</pre>';
 
+
+
+//トランザクション まとまって処理してくれる biginTransaction,commit, rollback
+//データベースに置いてもう一つの大切な処理
+//ex)銀行 残高を確認->Aさんから引き落とし->Bさんに振り込み
+//catchのあとは予め決まっている
+
+$pdo->beginTransaction();
+
+try{
+
+  //sql処理
+  $stmt = $pdo->prepare($sql); //プリペアードステートメント
+  $stmt->bindvalue('id',4,PDO::PARAM_INT); //紐付け
+  $stmt->execute(); //実行
+
+  $pdo->commit();
+
+}catch(PDOException $e){
+
+  $pdo->rollBack(); //更新のキャンセル
+
+}
+
 ?>
