@@ -128,6 +128,10 @@ if(!empty($_POST['btn_submit'])){
 
 <?php if($pageFlag === 2) : ?>
 <?php if($_POST['csrf'] === $_SESSION['csrfToken']):?>
+
+  //DBの接続
+  //DBの保存
+
   送信が完了しました。
 
 <?php unset($_SESSION['csrftokne']); ?>
