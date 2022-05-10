@@ -7,6 +7,8 @@ require 'validation.php';
 
 //クリックジャッキングの対策の為のコード
 header('X-FRAME-OPTIONS:DENY');
+
+
 //スーパーグローバル変数 php 9種類
 //連想配列になっている
 //GET..アドレス通信にキーが表示される
@@ -129,8 +131,10 @@ if(!empty($_POST['btn_submit'])){
 <?php if($pageFlag === 2) : ?>
 <?php if($_POST['csrf'] === $_SESSION['csrfToken']):?>
 
-  //DBの接続
-  //DBの保存
+  <?php require'../manite/insert.php';
+  
+  insertContact($_POST);
+  ?>
 
   送信が完了しました。
 
