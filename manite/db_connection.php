@@ -8,7 +8,7 @@ const DB_PASSWORD = 'root';
 //例外処理 Exception
 //データベースを繋ぐときにはお決まりの書き方
 try{
-  //基本のデフォルト値
+  //初期値は host が localhost、user が root、pass が root 
   //$pdo = new PDO('mysql:host=localhost;dbname=example', 'root', 'root');
   $pdo = new PDO(DB_HOST, DB_USER, DB_PASSWORD, [ 
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,//連想配列
