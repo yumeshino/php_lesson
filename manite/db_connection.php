@@ -22,7 +22,7 @@ try{
 
 } catch(PDOException $e){
   echo '接続失敗' . $e->getMessage() . "\n";
-  exit();
+  exit(); //処理の抜け出し
 }
 
 ?>
