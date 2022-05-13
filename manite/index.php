@@ -1,5 +1,7 @@
 <?php
 
+//DBの中のデータを表示するためのコード
+//下記のコードでこのファイルをDBとPDOを繋ぐ
 require 'db_connection.php';
 
 //ユーザー入力なし  query
@@ -16,11 +18,11 @@ require 'db_connection.php';
 
 
 //ユーザー入力あり   prepare,bind,execute
-  //悪意ユーザー delete * SQLインジェクション対策
+//悪意ユーザー delete * SQLインジェクション対策
 //検索画面、お問い合わせフォームとかユーザーが入力する場合
-$sql = 'select * from contacts where id = :id'; //名前付きプレースホルダー
+$sql = 'select * from contacts where id = :id'; //名前付プレースホルダー
 $stmt = $pdo->prepare($sql); //プリペアードステートメント
-$stmt->bindvalue('id',4,PDO::PARAM_INT); //紐付け（ユーザーによって入力するから紐付けの必要がある）
+$stmt->bindValue('id',2,PDO::PARAM_INT); //紐付け（ユーザーによって入力するから紐付けの必要がある）
 $stmt->execute(); //実行
 
 $result = $stmt->fetchAll();
