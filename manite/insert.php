@@ -5,11 +5,11 @@ function insertContact($request){
 require 'db_connection.php';
 
 //入力 DB保存 prepare,bind,execute(配列(全て文字列))
-//全て文字列の場合はbindは不要になる
+//入力画面で全て文字列の場合はbindは不要になる
 
 $params = [
   'id' => 'null',
-  'yuor_name' => $request['yuor_name'],
+  'your_name' => $request['your_name'],
   'email' => $request['email'],
   'url' => $request['url'],
   'gender' => $request['gender'],
