@@ -1,8 +1,8 @@
 <?php
 
 const DB_HOST = 'mysql:dbname=udemy_php;host=localhost;charset=utf8';
-const DB_USER = 'root';
-const DB_PASSWORD = 'root';
+const DB_USER = 'php_user';
+const DB_PASSWORD = 'moyumi090611';
 
 
 //例外処理 Exception
