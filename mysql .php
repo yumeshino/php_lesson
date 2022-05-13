@@ -14,6 +14,7 @@ DB操作の基本 CRUD
 Create・・・新規作成 insert
 Read・・・・表示 slect
 Update・・・更新 update（上書き） ->履歴を残すか、完全に上書きするか
+            履歴を残す場合はカラムを追加する update_at等のカラム
 Delete・・・削除 delete ->完全に消すか、非表示にするか
 
 db操作の基本 Select
