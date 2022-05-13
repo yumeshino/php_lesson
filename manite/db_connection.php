@@ -1,5 +1,6 @@
 <?php
 
+// PDOとDBを繋ぐための実体化（インスタンス化）
 const DB_HOST = 'mysql:dbname=udemy_php;host=localhost;charset=utf8';
 const DB_USER = 'php_user';
 const DB_PASSWORD = 'moyumi090611';
