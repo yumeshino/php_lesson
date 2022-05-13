@@ -1,6 +1,6 @@
 <?php
 
-
+//初期値は host が localhost、user が root、pass が root 
 const DB_HOST = 'mysql:dbname=udemy_php;host=localhost;charset=utf8';
 const DB_USER = 'php_user';
 const DB_PASSWORD = 'moyumi090611';
@@ -9,7 +9,6 @@ const DB_PASSWORD = 'moyumi090611';
 //例外処理 Exception
 //データベースを繋ぐときにはお決まりの書き方
 try{
-  //初期値は host が localhost、user が root、pass が root 
   //$pdo = new PDO('mysql:host=localhost;dbname=example', 'root', 'root');
 
   // PDOとDBを繋ぐための実体化（インスタンス化）
