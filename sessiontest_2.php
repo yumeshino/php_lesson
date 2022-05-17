@@ -26,7 +26,7 @@ session_start();
 
   echo 'クッキー';
   echo '<pre>';
-  var_dump($_SESSION);
+  var_dump($$_COOKIE);
   echo '</pre>';
 
   ?>
