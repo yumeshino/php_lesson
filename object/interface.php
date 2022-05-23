@@ -1,6 +1,10 @@
 <?php
 
-//インターフェイス
+//インターフェイス 頭にinterfaceとつける
+//メソッドの内容の部分しか書けない
+//publicの関数で中身は書いてはいけない
+//mplementsで複数適用可能
+
 interface ProductInterface{
   //変数 関数
   // public function echoProduct(){
@@ -13,10 +17,6 @@ interface ProductInterface{
 
 //インターフェイス
 interface NewsInterface{
-  //変数 関数
-  // public function echoProduct(){
-  //   echo '親クラスです';
-  // }
 
   public function getNews();
   
@@ -36,6 +36,8 @@ class BaseProduct{
 }
 
 //子クラス・派生クラス・サブクラス
+//interfaceを使うには子クラスにimplementsというキーワードを使う
+//複数の適用可能
 class Product implements ProductInterface,NewsInterface {
 
   //アクセス修飾子,private(外からアクセス✖️),protected(自分・継承したクラス),public(公開)

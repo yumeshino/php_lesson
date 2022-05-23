@@ -1,6 +1,7 @@
 <?php
 
 //抽象クラス 頭にabstractをつける //設定するメソッド（関数）を強制
+//
 abstract class ProductAbstract{
   //変数 関数
   public function echoProduct(){
@@ -10,6 +11,7 @@ abstract class ProductAbstract{
   //頭にabstractをつけて抽象メソッドの形に
   //関数の中身は書けない
   //抽象クラスで設定しているメソッドは必ず子クラスでも書く必要がある
+  //クラスの特徴も持っていてonterfaceと普通のクラスの中間の位置付け
   abstract public function getProduct();
 }
 
