@@ -1,16 +1,20 @@
 <?php
 
-//抽象クラス //設定するメソッドを強制
+//抽象クラス 頭にabstractをつける //設定するメソッド（関数）を強制
 abstract class ProductAbstract{
   //変数 関数
   public function echoProduct(){
     echo '親クラスです';
   }
 
+  //頭にabstractをつけて抽象メソッドの形に
+  //関数の中身は書けない
+  //抽象クラスで設定しているメソッドは必ず子クラスでも書く必要がある
   abstract public function getProduct();
-  
 }
 
+
+//抽象クラスに対してinstance化できるのを
 //具象クラス、親クラス・基底クラス・スーパークラス
 class BaseProduct{
   //変数 関数
@@ -24,6 +28,9 @@ class BaseProduct{
   }
 }
 
+
+
+
 //子クラス・派生クラス・サブクラス
 class Product extends ProductAbstract {
 
@@ -33,8 +40,6 @@ class Product extends ProductAbstract {
   private $product = [];
 
   //関数
-
-
   //初回
   function __construct($product){
     
