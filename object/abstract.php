@@ -32,7 +32,6 @@ class BaseProduct{
 
 
 
-
 //子クラス・派生クラス・サブクラス
 class Product extends ProductAbstract {
 
