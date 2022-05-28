@@ -7,4 +7,8 @@ use App\Controllers\TestController;
 $app = new TestController;
 $app->run();
 
+use Carbon\carbon;
+
+echo Carbon::now();
+
 ?>
