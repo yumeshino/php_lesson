@@ -1,0 +1,15 @@
+{
+    "name": "shinozakiyume/composertest",
+    "autoload": {
+        "psr-4": {
+            "Shinozakiyume\\Composertest\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "yumeshino",
+            "email": "shinozakiyume88@gmail.com"
+        }
+    ],
+    "require": {}
+}
