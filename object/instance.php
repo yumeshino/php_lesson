@@ -56,5 +56,7 @@ class Product {
   Product::getStaticProduct('静的');
   echo '<br>';
 
+  
+
 
 ?>
